@@ -1,6 +1,6 @@
-print("")
+print("Hi")
 
 if True:
     print(True)
 
-print("Hi")
+print("Goodby")
