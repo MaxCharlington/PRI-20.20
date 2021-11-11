@@ -1,4 +1,4 @@
-print("Hi")
+print("Hihihihih")
 
 if True:
     print(True)
