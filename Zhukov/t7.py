@@ -33,8 +33,7 @@ def get_met(num_array):
     min_tulpe = ('Min', get_min(num_array))
     mid_tulpe = ('Mid', get_mid(num_array))
     med_tulpe = ('Med', get_med(num_array))
-    tulped = (max_tulpe, min_tulpe, mid_tulpe, med_tulpe)
-    return tulped
+    return max_tulpe, min_tulpe, mid_tulpe, med_tulpe
 
 
 def get_max_un(num_array):
@@ -62,12 +61,14 @@ def get_med_un(num_array):
     return (s_num_array[med_value - 1] + s_num_array[med_value]) / 2
 
 def get_met_un(num_array):
-    max_tulpe_un = ('Max', get_max_un(num_array))
-    min_tulpe_un = ('Min', get_min_un(num_array))
-    mid_tulpe_un = ('Mid', get_mid_un(num_array))
-    med_tulpe_un = ('Med', get_med_un(num_array))
-    tulped = (max_tulpe_un, min_tulpe_un, mid_tulpe_un, med_tulpe_un)
-    return tulped
+    s_arr = sorted(num_array)
+    mid_med = int(len(s_arr) // 2)
+    max_tulpe = ('Max',s_arr[-1])
+    min_tulpe = ('Min',s_arr[0])
+    mid_tulpe = ('Mid',s_arr[mid_med-1])
+    med_tulpe = ('Med',(s_arr[mid_med - 1] + s_arr[mid_med]) / 2)
+    return max_tulpe, min_tulpe, mid_tulpe, med_tulpe
+    
 
 def main():
     numbers_sorted = [167,108,99,87,79,65,43,23,13,5,4,1,0]
