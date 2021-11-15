@@ -8,47 +8,84 @@
 # для сортированных массивов
 
 def get_max(num_array):
-    max_value = None
-    for n in num_array:
-        if (max_value is None or n > max_value):
-            max_value = n
-    return(max_value)
+    if num_array[0] > num_array[-1]:
+        return num_array[0]
+    else:
+        return num_array[-1]
 
 def get_min(num_array):
-    min_value = None
-    for n in num_array:
-        if (min_value is None or n < min_value):
-            min_value = n
-    return(min_value)
+    
+    if num_array[0] < num_array[-1]:
+        return num_array[0]
+    else:
+        return num_array[-1]
 
 def get_mid(num_array):
     mid_value = int(len(num_array) / 2)
-    return(num_array[mid_value - 1])
+    return num_array[mid_value - 1]
 
 def get_med(num_array):
     med_value = int(len(num_array) // 2)
-    return(num_array[med_value - 1] + num_array[med_value]) / 2
+    return (num_array[med_value - 1] + num_array[med_value]) / 2
 
 def get_met(num_array):
-    count = 0
-    for n in num_array:
-        if (n % 2 != 0):
-            count += 1
-    return(count)
+    max_tulpe = ('Max', get_max(num_array))
+    min_tulpe = ('Min', get_min(num_array))
+    mid_tulpe = ('Mid', get_mid(num_array))
+    med_tulpe = ('Med', get_med(num_array))
+    tulped = (max_tulpe, min_tulpe, mid_tulpe, med_tulpe)
+    return tulped
 
+
+def get_max_un(num_array):
+    max_value = num_array[0]
+    for n in num_array:
+        if (max_value is None or n > max_value):
+            max_value = n
+    return max_value
+    
+def get_min_un(num_array):
+    min_value = num_array[0]
+    for n in num_array:
+        if (min_value is None or n < min_value):
+            min_value = n
+    return min_value
+
+def get_mid_un(num_array):
+    s_num_array = sorted(num_array)
+    mid_value = int(len(s_num_array) / 2)
+    return s_num_array[mid_value - 1]
+
+def get_med_un(num_array):
+    s_num_array = sorted(num_array)
+    med_value = int(len(s_num_array) // 2)
+    return (s_num_array[med_value - 1] + s_num_array[med_value]) / 2
+
+def get_met_un(num_array):
+    max_tulpe_un = ('Max', get_max_un(num_array))
+    min_tulpe_un = ('Min', get_min_un(num_array))
+    mid_tulpe_un = ('Mid', get_mid_un(num_array))
+    med_tulpe_un = ('Med', get_med_un(num_array))
+    tulped = (max_tulpe_un, min_tulpe_un, mid_tulpe_un, med_tulpe_un)
+    return tulped
 
 def main():
-    numbers = [167,108,99,87,79,65,43,23,13,5,1,0]
+    numbers_sorted = [167,108,99,87,79,65,43,23,13,5,4,1,0]
+    numbers_unsorted = [-1,95,134,99,14,11,0,4,1233,43,55,77]
+    print('')
+    print('-----Функции с нетсортированным массивом-----', '\n')
     print('Массив: ', end='')
-    for n in numbers:
+    for n in numbers_unsorted:
         print(str(n) + ' ', end='')
     print('')
-    print('get_max: ' + str(get_max(numbers)))
-    print('get_min: ' + str(get_min(numbers)))
-    print('get_mid: ' + str(get_mid(numbers)))
-    print('get_med: ' + str(get_med(numbers)))
-    print('get_metrics_amount_of_odd_numbers: ' + str(get_met(numbers)))
+    print('get_metrics: ', get_met_un(numbers_unsorted))
 
+    print('\n','-----Функции с отсортированным массивом-----','\n')
+    print('Массив: ', end='')
+    for n in numbers_sorted:
+        print(str(n) + ' ', end='')
+    print('')
+    print('get_metrics: ', get_met(numbers_sorted))
 
 if __name__ == '__main__':
   main()

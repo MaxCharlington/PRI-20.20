@@ -7,17 +7,16 @@
 # процент, и выдающую в терминал результирующую сумму на конец расчетного периода вклада.
 
 def main():
-    i = 0
     print('Введите сумму вклада: ')
-    x = int(input())
+    x = float(input())
     print('Введите срок хранения: ')
     years = int(input())
     print('Введите % годовых: ')
-    p = int(input())
-    for i in range(years):
+    p = float(input())
+    for x in range(years):
         print(x)
         x += (x*(1+p/100))
-    print('Вы получите: ' + str(x))
+    print('Вы получите: ', x)
 
 if __name__ == '__main__':
   main()

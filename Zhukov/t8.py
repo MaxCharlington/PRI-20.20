@@ -8,18 +8,15 @@ def is_perfect(n):
     for i in range(2,n // 2 + 1):
         if n % i == 0:
             count += i
-    if count == n:
-        return(1)
-    else:
-        return(0)
+        return count != n
 
 def main():
     print('Введите число: ')
     number = int(input())
-    if(is_perfect(number) == 1):
-        print(str(number) + ' - совершенное число')
+    if(is_perfect(number)):
+        print(str(number), ' - совершенное число')
     else:
-        print(str(number) + ' - несовершенное число')
+        print(str(number),' - несовершенное число')
 
 if __name__ == '__main__':
   main()

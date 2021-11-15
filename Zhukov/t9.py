@@ -13,7 +13,7 @@ def is_pangram(string):
 def main():
     print('Введите строку: ','\n')
     s = input()
-    if(is_pangram(s) == True):
+    if(is_pangram(s)):
         print('\n', 'Введеная строкая не является панграммой')
     else:
         print('\n','Введеная строкая является панграммой')
