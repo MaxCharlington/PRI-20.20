@@ -4,7 +4,6 @@ def cat(f_name):
             for line in f_file:
                 print(line, end='')
             print()
-        f_file.close()
     except FileNotFoundError:
         print('Нет файла') 
 

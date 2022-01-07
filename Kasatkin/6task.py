@@ -3,7 +3,6 @@ def wordLen(f_name):
         with open(f_name) as f_file:
             wordList = f_file.read().split()
             wordList.sort(key=len)
-            f_file.close()
             word = wordList[-1]
             maxLen = len(word)
             return [word, maxLen]
