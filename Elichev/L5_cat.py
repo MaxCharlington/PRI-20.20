@@ -6,7 +6,6 @@ def cat(file):
             for line in file:
                 print(line, end='')
             print()
-        file.close()
     except FileNotFoundError:
         print('Такого файла не существует')
 
